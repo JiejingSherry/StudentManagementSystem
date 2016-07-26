@@ -24,43 +24,43 @@ public class Main {
                     if ("over".equals(stuInfo)) {
                         break;
                     }
-                    System.out.println("结果：输入格式错误，请重新输入");
+                    System.out.println("Result:Error,input again");
                     System.out.println("********************************");
                 }
                 con.add(initStuInfo(stuInfo));
-                System.out.println("结果：添加成功");
+                System.out.println("Result：add successful");
                 System.out.println("********************************");
                 break;
             case (2):
                 System.out.println("********************************");
-                System.out.println("请输入学生学号:");
+                System.out.println("Input Student Number:");
                 String sno = scanner.next();
                 con.deleteBySno(sno);
                 break;
             case (3):
                 System.out.println("********************************");
-                System.out.println("请输入更新的学生信息:");
-                System.out.println("姓名,学号,年龄,语文,数学,英语");
+                System.out.println("Update stu info:");
+                System.out.println("Name,Student ID,age,Level,Math,English");
                 String stuInfo1 = scanner.next();
                 if ("".equals(stuInfo1) || stuInfo1 == null
                         || !stuInfo1.matches("^[\\w]+[,][\\d]+[,][\\d]+[,][\\d]+[,][\\d]+[,][\\d]+$")) {
                     if ("over".equals(stuInfo1)) {
                         break;
                     }
-                    System.out.println("结果：输入格式错误，请重新输入");
+                    System.out.println("Result:Error,input again");
                     System.out.println("********************************");
                 }
                 con.update(initStuInfo(stuInfo1));
-                System.out.println("结果：更新成功");
+                System.out.println("Result：Successful");
                 System.out.println("********************************");
                 break;
             case (4):
                 System.out.println("********************************");
-                System.out.println("请输入学生学号:");
+                System.out.println("Input：Student Info:");
                 String sno1 = scanner.next();
                 Student stu = con.queryBySno(sno1);
                 if (stu != null) {
-                    System.out.println("姓名|学号|年龄|语文|数学|英语");
+                    System.out.println("Name|Student ID|age|Level|Math|English");
                     System.out.println(stu.getName() + "|" + stu.getSno() + "|" + stu.getAge() + "|" + stu.getMath()
                             + "|" + stu.getEnglish() + "|" + stu.getChinese());
                 } else {
@@ -79,11 +79,11 @@ public class Main {
 
     private static void init() {
         System.out.println("************************");
-        System.out.println("*   1. 添加学生                  *");
-        System.out.println("*   2. 删除学生                  *");
-        System.out.println("*   3. 更新学生                  *");
-        System.out.println("*   4. 查询学生                  *");
-        System.out.println("*   0. 退出                         *");
+        System.out.println("*   1.Add    StuInfo                  *");
+        System.out.println("*   2.Delete StuInfo                  *");
+        System.out.println("*   3.Update StuInfo                  *");
+        System.out.println("*   4.DisplayStuInfo                  *");
+        System.out.println("*   0.Exit                            *");
         System.out.println("************************");
     }
 
